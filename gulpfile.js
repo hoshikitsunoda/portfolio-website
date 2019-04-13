@@ -13,8 +13,8 @@ const runSequence = require('run-sequence')
 
 gulp.task('sass', function() {
   return gulp
-    .src('app/scss/**/*.scss')
-    .pipe(concat('all.scss'))
+    .src('app/scss/styles.scss')
+    .pipe(concat('styles.scss'))
     .pipe(sass())
     .pipe(gulp.dest('app/css'))
     .pipe(
