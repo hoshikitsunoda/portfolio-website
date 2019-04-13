@@ -1,3 +1,11 @@
+$desktop: 1023px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
 @mixin rotate($degrees) {
   -webkit-transform: rotate($degrees);
   -moz-transform: rotate($degrees);
