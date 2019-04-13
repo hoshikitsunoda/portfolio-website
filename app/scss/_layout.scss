@@ -1,12 +1,14 @@
+@import '_mixins';
+
 %widthHeight100 {
   width: 100%;
   height: 100%;
 }
 
 %flexResponsive {
-  display: flex;
+  @include flexbox();
   flex-direction: column;
-  height: 100%;
+  overflow: hidden;
 
   @media (min-width: 1023px) {
     flex-direction: row;
@@ -14,10 +16,9 @@
 }
 
 %containerLeftRight {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  @include flexbox();
 
   @media (min-width: 1023px) {
     flex-direction: row;
