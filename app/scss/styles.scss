@@ -20,12 +20,12 @@ body {
 
     .content {
       @extend %flexResponsive;
-      .left,
-      .right {
+      > .left,
+      > .right {
         @extend %containerLeftRight;
       }
 
-      .left {
+      > .left {
         background: $red;
         order: 2;
 
@@ -51,6 +51,8 @@ body {
         }
 
         .b-2 {
+          @include flexbox();
+          flex-direction: column;
           width: 85%;
 
           .project-link-container {
@@ -59,8 +61,10 @@ body {
 
           .about-container {
             margin: auto 0 auto auto;
-            background-color: $blue;
             color: $primary-text-color;
+            background: $blue url('../images/avatar.png') no-repeat center
+              bottom;
+            background-size: contain;
 
             @extend %aboutContainer;
 
