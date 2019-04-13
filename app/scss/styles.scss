@@ -86,6 +86,28 @@ body {
         }
 
         .b-1 {
+          @include flexbox();
+          flex-direction: row;
+
+          .intro {
+            width: 50%;
+            padding: 2rem;
+
+            .text-wrap {
+              font-weight: 300;
+              font-size: 1.4rem;
+              letter-spacing: 0.2rem;
+
+              p {
+                padding-bottom: 1rem;
+
+                &:first-child {
+                  font-size: 1.5rem;
+                  font-weight: bold;
+                }
+              }
+            }
+          }
         }
 
         .b-2 {
