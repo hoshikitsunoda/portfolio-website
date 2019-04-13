@@ -31,3 +31,10 @@ $desktop: 1023px;
   padding-left: 1.4rem;
   font-weight: 400;
 }
+
+@mixin backgroundSize($width, $height) {
+  -o-background-size: $width, $height;
+  -webkit-background-size: $width, $height;
+  -moz-background-size: $width, $height;
+  background-size: $width, $height;
+}

@@ -1,13 +1,7 @@
+@import '_global';
 @import '_layout';
 @import '_variables';
 @import '_mixins';
-
-html,
-body {
-  margin: 0;
-  padding: 0;
-  height: 100%;
-}
 
 html,
 body {
@@ -69,7 +63,7 @@ body {
             color: $primary-text-color;
             background: color(blue) url('../images/avatar.png') no-repeat center
               bottom;
-            background-size: contain;
+            @include backgroundSize(80%, auto);
 
             @extend %aboutContainer;
 
@@ -101,6 +95,14 @@ body {
 
           .project-container {
             background: color(navy);
+
+            .project {
+              padding: 1rem;
+
+              img {
+                width: 100%;
+              }
+            }
           }
         }
       }
