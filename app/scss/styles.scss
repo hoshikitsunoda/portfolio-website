@@ -1,5 +1,26 @@
+@import '_layout';
+@import '_variables';
+
 html,
 body {
   margin: 0;
   padding: 0;
+
+  .container {
+    .content {
+      @extend %flexRow;
+      .left,
+      .right {
+        @extend %containerColumn;
+      }
+
+      .left {
+        background: $red;
+      }
+
+      .right {
+        background: $yellow;
+      }
+    }
+  }
 }
