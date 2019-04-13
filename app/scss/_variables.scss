@@ -1,7 +1,13 @@
-$red: #f52549;
-$yellow: #ffd64d;
-$blue: #234099;
-$navy: #011a27;
+$colors: (
+  red: #f52549,
+  yellow: #ffd64d,
+  blue: #234099,
+  navy: #011a27
+);
+
+@function color($color-name) {
+  @return map-get($colors, $color-name);
+}
 
 $primary-text-color: #e5e5e5;
 
