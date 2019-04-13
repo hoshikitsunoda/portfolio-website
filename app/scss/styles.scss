@@ -7,19 +7,55 @@ body {
   padding: 0;
 
   .container {
+    height: 100vh;
+
     .content {
-      @extend %flexRow;
+      @extend %flexResponsive;
       .left,
       .right {
-        @extend %containerColumn;
+        @extend %containerLeftRight;
       }
 
       .left {
         background: $red;
+        order: 2;
+
+        @media (min-width: 1023px) {
+          order: 1;
+        }
+
+        .b-1 {
+          height: 100%;
+          padding-top: 2rem;
+
+          .about-link-container {
+            height: 85%;
+            display: flex;
+            align-items: flex-end;
+            h1 {
+              transform: rotate(90deg);
+            }
+          }
+        }
+
+        .b-2 {
+          .about-container {
+            margin: auto 0 auto auto;
+            background-color: $blue;
+            color: $primary-text-color;
+
+            @extend %aboutContainer;
+          }
+        }
       }
 
       .right {
         background: $yellow;
+        order: 1;
+
+        @media (min-width: 1023px) {
+          order: 2;
+        }
       }
     }
   }
