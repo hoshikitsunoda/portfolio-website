@@ -5,6 +5,13 @@ html,
 body {
   margin: 0;
   padding: 0;
+  font-family: $primary-font;
+
+  h1 {
+    text-transform: uppercase;
+    font-size: 1.5em;
+    letter-spacing: 0.7em;
+  }
 
   .container {
     height: 100vh;
@@ -26,25 +33,41 @@ body {
 
         .b-1 {
           height: 100%;
-          padding-top: 2rem;
+          width: 15%;
 
           .about-link-container {
-            height: 85%;
+            height: 75%;
             display: flex;
             align-items: flex-end;
+
             h1 {
               transform: rotate(90deg);
+              width: 100%;
             }
           }
         }
 
         .b-2 {
+          width: 85%;
+
+          .project-link-container {
+            margin: 1.5rem 0;
+          }
+
           .about-container {
             margin: auto 0 auto auto;
             background-color: $blue;
             color: $primary-text-color;
 
             @extend %aboutContainer;
+
+            p {
+              font-size: 0.8em;
+              letter-spacing: 0.1rem;
+              line-height: 1.6rem;
+              padding-left: 1.2rem;
+              opacity: 0.9;
+            }
           }
         }
       }
