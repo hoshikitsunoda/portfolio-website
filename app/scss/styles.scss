@@ -34,7 +34,7 @@ body {
         background: color(red);
         order: 2;
 
-        @media (min-width: 1023px) {
+        @include desktop {
           order: 1;
         }
 
@@ -86,7 +86,7 @@ body {
         flex-direction: column;
         justify-content: space-between;
 
-        @media (min-width: 1023px) {
+        @include desktop {
           order: 2;
         }
 

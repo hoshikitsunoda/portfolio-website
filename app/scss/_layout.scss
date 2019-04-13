@@ -10,7 +10,7 @@
   flex-direction: column;
   overflow: hidden;
 
-  @media (min-width: 1023px) {
+  @include desktop {
     flex-direction: row;
   }
 }
@@ -20,7 +20,7 @@
   height: 100vh;
   @include flexbox();
 
-  @media (min-width: 1023px) {
+  @include desktop {
     flex-direction: row;
     width: 50%;
   }
