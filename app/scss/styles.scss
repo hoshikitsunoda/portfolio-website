@@ -6,6 +6,11 @@ html,
 body {
   margin: 0;
   padding: 0;
+  height: 100%;
+}
+
+html,
+body {
   font-family: $primary-font;
   font-weight: bold;
 
@@ -20,13 +25,13 @@ body {
 
     .content {
       @extend %flexResponsive;
-      > .left,
-      > .right {
+      .left,
+      .right {
         @extend %containerLeftRight;
       }
 
-      > .left {
-        background: $red;
+      .left {
+        background: color(red);
         order: 2;
 
         @media (min-width: 1023px) {
@@ -40,7 +45,7 @@ body {
           justify-content: center;
           align-items: flex-end;
 
-          .about-link-container {
+          .about-text-container {
             padding-bottom: 4.5rem;
 
             .title {
@@ -55,14 +60,14 @@ body {
           flex-direction: column;
           width: 85%;
 
-          .project-link-container {
+          .project-text-container {
             margin: 1.5rem 0;
           }
 
           .about-container {
             margin: auto 0 auto auto;
             color: $primary-text-color;
-            background: $blue url('../images/avatar.png') no-repeat center
+            background: color(blue) url('../images/avatar.png') no-repeat center
               bottom;
             background-size: contain;
 
@@ -76,11 +81,27 @@ body {
       }
 
       .right {
-        background: $yellow;
+        background: color(yellow);
         order: 1;
+        flex-direction: column;
+        justify-content: space-between;
 
         @media (min-width: 1023px) {
           order: 2;
+        }
+
+        .b-1 {
+        }
+
+        .b-2 {
+          @include flexbox();
+          flex-direction: column;
+          text-align: center;
+          color: color(yellow);
+
+          .project-container {
+            background: color(navy);
+          }
         }
       }
     }
