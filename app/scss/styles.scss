@@ -1,5 +1,249 @@
-html,
+@import '_global';
+@import '_layout';
+@import '_variables';
+@import '_mixins';
+
 body {
-  margin: 0;
-  padding: 0;
+  font-family: $primary-font;
+  font-weight: bold;
+
+  .title {
+    text-transform: uppercase;
+    font-size: 1em;
+    letter-spacing: 0.7em;
+    color: color(secondary-text-color);
+
+    @include mobile(360px) {
+      font-size: 1.3em;
+    }
+
+    @include mobile(370px) {
+      font-size: 1.5em;
+    }
+  }
+
+  .container {
+    height: 100vh;
+
+    .content {
+      @extend %flexResponsive;
+      .left,
+      .right {
+        position: relative;
+        @extend %containerLeftRight;
+      }
+
+      .left {
+        background: color(red);
+        order: 2;
+
+        @include desktop {
+          order: 1;
+        }
+
+        .b-1 {
+          height: 100%;
+          width: 15%;
+          @include flexbox();
+          justify-content: center;
+          align-items: flex-end;
+
+          .about-text-container {
+            padding-bottom: 4.5rem;
+
+            .title {
+              @include rotate(90deg);
+              width: 100%;
+            }
+          }
+        }
+
+        .b-2 {
+          @include flexbox();
+          flex-direction: column;
+          width: 85%;
+
+          .project-text-container {
+            margin: 1.5rem 0;
+
+            .title {
+              @include tablet(767px) {
+                text-align: right;
+                padding-right: 1rem;
+              }
+            }
+          }
+
+          .about-container {
+            margin: auto 0 auto auto;
+            color: color(primary-text-color);
+            background: color(blue) url('../images/avatar.png') no-repeat center
+              bottom;
+            @include backgroundSize(80%, auto);
+
+            @extend %aboutContainer;
+
+            @include tablet(767px) {
+              @include backgroundSize(40%, auto);
+            }
+
+            p {
+              @include pTag();
+            }
+          }
+        }
+      }
+
+      .right {
+        background: color(yellow);
+        order: 1;
+        flex-direction: column;
+        justify-content: space-between;
+
+        @include desktop {
+          order: 2;
+        }
+
+        @include tablet(767px) {
+          flex-direction: row;
+        }
+
+        .b-1 {
+          flex: 1;
+          @include flexbox();
+          flex-direction: row;
+          justify-content: space-between;
+
+          .intro {
+            width: 50%;
+            padding: 1rem;
+            @include boxSizing(border-box);
+
+            .text-wrap {
+              font-weight: 300;
+              font-size: 1.4rem;
+              letter-spacing: 0.2rem;
+
+              p {
+                padding: 0 0 1rem;
+
+                &:first-child {
+                  font-size: 1.5rem;
+                  font-weight: bold;
+                }
+
+                @include mobile(370px) {
+                  padding: 1rem 0;
+                }
+              }
+            }
+          }
+
+          .contact {
+            background: color(navy);
+
+            .icon-wrap {
+              @include flexbox();
+              flex-direction: column;
+              padding: 1rem;
+              align-items: center;
+              height: 100%;
+
+              @include mobileHeight($height800) {
+                flex-direction: column;
+              }
+
+              a {
+                flex: 0;
+                color: color(yellow);
+                font-size: 1.5rem;
+                text-align: center;
+                padding-bottom: 1rem;
+
+                @include mobile(370px) {
+                  font-size: 2rem;
+                }
+              }
+            }
+          }
+        }
+
+        .b-2 {
+          flex: 1;
+          @include flexbox();
+          flex-direction: column;
+          text-align: center;
+          color: color(yellow);
+
+          .contact-text-container {
+            padding: 1rem 0.5rem;
+            text-align: right;
+            display: none;
+
+            @include desktop {
+              display: block;
+            }
+          }
+
+          .project-container {
+            background: color(navy);
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+
+            @include mobileHeight(700px) {
+              padding: 2rem 0;
+            }
+
+            @include mobileHeight(800px) {
+              padding: 3rem 0;
+            }
+
+            @include tablet(767px) {
+              height: 50vh;
+              width: auto;
+            }
+
+            .project {
+              .image-wrap {
+                height: 14rem;
+                padding: 0.5rem 0;
+
+                @include mobile(340px) {
+                  height: 17rem;
+                }
+
+                img {
+                  width: 100%;
+                  max-width: 450px;
+                }
+              }
+
+              .text-wrap {
+                padding: 0 0.5rem 1rem;
+                font-size: 0.8rem;
+
+                * {
+                  font-weight: 100;
+                  letter-spacing: 0.2rem;
+                }
+
+                h3 {
+                  text-transform: uppercase;
+                  font-size: 1.3rem;
+                  padding-bottom: 0.8rem;
+                  letter-spacing: 0.3rem;
+                }
+
+                p:nth-child(2) {
+                  padding-bottom: 0.8rem;
+                  font-size: 1rem;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
 }

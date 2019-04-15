@@ -1,0 +1,66 @@
+$desktop: 1023px;
+$height640: 640px;
+$height800: 800px;
+
+@mixin desktop {
+  @media (min-width: #{$desktop}) {
+    @content;
+  }
+}
+
+@mixin tablet($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin mobile($width) {
+  @media (min-width: #{$width}) {
+    @content;
+  }
+}
+
+@mixin mobileHeight($height) {
+  @media (min-height: #{$height}) {
+    @content;
+  }
+}
+
+@mixin rotate($degrees) {
+  -webkit-transform: rotate($degrees);
+  -moz-transform: rotate($degrees);
+  -ms-transform: rotate($degrees);
+  -o-transform: rotate($degrees);
+  transform: rotate($degrees);
+}
+
+@mixin flexbox {
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+@mixin pTag {
+  margin: 0;
+  padding: 0;
+  font-size: 1em;
+  letter-spacing: 0.2rem;
+  line-height: 2rem;
+  padding-left: 1.4rem;
+  font-weight: 400;
+}
+
+@mixin backgroundSize($width, $height) {
+  -o-background-size: $width, $height;
+  -webkit-background-size: $width, $height;
+  -moz-background-size: $width, $height;
+  background-size: $width, $height;
+}
+
+@mixin boxSizing($box-model) {
+  -webkit-box-sizing: $box-model;
+  -moz-box-sizing: $box-model;
+  box-sizing: $box-model;
+}

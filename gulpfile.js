@@ -8,13 +8,15 @@ const cssnano = require('gulp-cssnano')
 const imagemin = require('gulp-imagemin')
 const cache = require('gulp-cache')
 const concat = require('gulp-concat')
+const combine = require('gulp-scss-combine')
 const del = require('del')
 const runSequence = require('run-sequence')
 
 gulp.task('sass', function() {
   return gulp
-    .src('app/scss/**/*.scss')
-    .pipe(concat('all.scss'))
+    .src('app/scss/styles.scss')
+    .pipe(combine())
+    .pipe(concat('styles.scss'))
     .pipe(sass())
     .pipe(gulp.dest('app/css'))
     .pipe(
