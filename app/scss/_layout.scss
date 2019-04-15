@@ -24,11 +24,15 @@
     flex-direction: row;
     width: 50%;
   }
+
+  @include tablet(767px) {
+    height: 50vh;
+  }
 }
 
 %aboutContainer {
   height: 100%;
   text-align: right;
   padding: 1rem;
-  box-sizing: border-box;
+  @include boxSizing(border-box);
 }
