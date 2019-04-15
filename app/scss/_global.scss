@@ -5,6 +5,12 @@ body {
   height: 100%;
 }
 
+*,
+:after,
+:before {
+  box-sizing: border-box;
+}
+
 p,
 h1,
 h2,
