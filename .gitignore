@@ -1,7 +1,0 @@
-node_modules
-app/css
-dist
-.DS_Store
-
-.sass-cache/
-*.css.map
