@@ -209,6 +209,8 @@ body {
                 height: 14rem;
                 padding: 0.5rem 0;
                 position: relative;
+                display: flex;
+                flex-wrap: wrap;
 
                 @include mobile(340px) {
                   height: 17rem;
@@ -232,8 +234,9 @@ body {
                 }
 
                 img {
-                  width: 100%;
-                  max-width: 450px;
+                  width: 50%;
+                  height: 50%;
+                  padding: 0.3rem;
                 }
               }
 
