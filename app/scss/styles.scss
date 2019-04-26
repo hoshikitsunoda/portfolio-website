@@ -1,7 +1,7 @@
-@import '_global';
-@import '_layout';
-@import '_variables';
-@import '_mixins';
+@import './global';
+@import './layout';
+@import './variables';
+@import './mixins';
 
 body {
   font-family: $primary-font;
@@ -205,6 +205,8 @@ body {
             }
 
             .project {
+              cursor: pointer;
+
               .image-wrap {
                 height: 14rem;
                 padding: 0.5rem 0;
