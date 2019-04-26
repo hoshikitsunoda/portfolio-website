@@ -23,6 +23,7 @@
   @include desktop {
     flex-direction: row;
     width: 50%;
+    height: 100vh !important;
   }
 
   @include tablet(767px) {
