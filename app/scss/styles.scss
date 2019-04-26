@@ -37,10 +37,6 @@ body {
         background: color(red);
         order: 2;
 
-        @include desktop {
-          order: 1;
-        }
-
         .b-1 {
           height: 100%;
           width: 15%;
@@ -48,8 +44,18 @@ body {
           justify-content: center;
           align-items: flex-end;
 
+          @include desktop {
+            align-items: flex-start;
+            order: 2;
+          }
+
           .about-text-container {
             padding-bottom: 4.5rem;
+
+            @include desktop {
+              padding-bottom: 0;
+              padding-top: 6.5rem;
+            }
 
             .title {
               @include rotate(90deg);
@@ -66,10 +72,19 @@ body {
           .project-text-container {
             margin: 1.5rem 0;
 
+            @include desktop {
+              order: 2;
+            }
+
             .title {
               @include tablet(767px) {
                 text-align: right;
                 padding-right: 1rem;
+              }
+
+              @include desktop {
+                text-align: left;
+                padding-left: 2rem;
               }
             }
           }
@@ -87,8 +102,18 @@ body {
               @include backgroundSize(40%, auto);
             }
 
+            @include desktop {
+              order: 1;
+              @include backgroundSize(70%, auto);
+            }
+
             p {
               @include pTag();
+
+              @include desktop {
+                font-size: 1.2em;
+                line-height: 4rem;
+              }
             }
           }
         }
@@ -100,10 +125,6 @@ body {
         flex-direction: column;
         justify-content: space-between;
 
-        @include desktop {
-          order: 2;
-        }
-
         @include tablet(767px) {
           flex-direction: row;
         }
@@ -114,15 +135,29 @@ body {
           flex-direction: row;
           justify-content: space-between;
 
+          @include desktop {
+            order: 1;
+            justify-content: normal;
+          }
+
           .intro {
             width: 50%;
             padding: 1rem;
             @include boxSizing(border-box);
 
+            @include desktop {
+              order: 1;
+            }
+
             .text-wrap {
               font-weight: 300;
               font-size: 1.4rem;
               letter-spacing: 0.2rem;
+
+              @include desktop {
+                font-size: 1.8rem;
+                padding-left: 2rem;
+              }
 
               p {
                 padding: 0 0 1rem;
@@ -130,6 +165,10 @@ body {
                 &:first-child {
                   font-size: 1.5rem;
                   font-weight: bold;
+
+                  @include desktop {
+                    font-size: 1.9rem;
+                  }
                 }
 
                 @include mobile(370px) {
@@ -148,6 +187,10 @@ body {
               padding: 1rem;
               align-items: center;
               height: 100%;
+
+              @include desktop {
+                padding: 2rem 1rem 1rem;
+              }
 
               @include mobileHeight($height800) {
                 flex-direction: column;
@@ -175,6 +218,10 @@ body {
           text-align: center;
           color: color(yellow);
 
+          @include desktop {
+            order: 2;
+          }
+
           .contact-text-container {
             padding: 1rem 0.5rem;
             text-align: right;
@@ -182,6 +229,14 @@ body {
 
             @include desktop {
               display: block;
+            }
+
+            .title {
+              display: block;
+
+              @include desktop {
+                display: none;
+              }
             }
           }
 
@@ -199,6 +254,12 @@ body {
               padding: 3rem 0;
             }
 
+            @include desktop {
+              position: absolute;
+              width: 100%;
+              left: 0;
+            }
+
             @include tablet(767px) {
               height: 50vh;
               width: auto;
@@ -214,6 +275,10 @@ body {
 
                 @include mobile(340px) {
                   height: 17rem;
+                }
+
+                @include desktop {
+                  padding: 0.5rem 2rem;
                 }
 
                 i {
@@ -237,6 +302,14 @@ body {
                   width: 50%;
                   height: 50%;
                   padding: 0.3rem;
+
+                  @include desktop {
+                    width: 33.3%;
+
+                    &:last-child {
+                      margin: 0 auto;
+                    }
+                  }
                 }
               }
 
@@ -248,6 +321,11 @@ body {
                 font-size: 0.8rem;
                 box-shadow: 0px 6px 0 -1px #bea03c;
                 cursor: pointer;
+
+                @include desktop {
+                  margin: 1rem auto;
+                  max-width: 360px;
+                }
 
                 * {
                   font-weight: 700;
